@@ -2,12 +2,16 @@ page-tixing {
     .ml{
         margin-left: 1rem;
     }
+    .settingsIcon{
+        font-size: 20px;
+    }
     .top{
         // background-color: green;
         // height: 4rem;
         // line-height:  4rem;
         width: 100%;
-        border-bottom: 1px solid #666;
+        // border-bottom: 1px solid #666;
+        box-shadow: 1px 1px 5px #888888;
         .chip{
             margin-left: .7rem;
         }
@@ -39,6 +43,7 @@ page-tixing {
                 font-size: 20rem;
                 text-align: center;
                 display: block;
+                color: rgb(207, 202, 194)
             }
             p{
                 text-align: center;

@@ -1,6 +1,8 @@
 import { SettingsPage } from './../settings/settings';
 import { Component, NgModule } from '@angular/core';
 import { IonicPage, NavController, NavParams, } from 'ionic-angular';
+import { CalendarModule } from 'ionic3-calendar';
+
 /**
  * Generated class for the TixingPage page.
  *
@@ -17,9 +19,11 @@ export class TixingPage {
   public SettingsPage=SettingsPage;
   public isHidden=true;
   public bottomHidden=true;
+  public CalendarModule=CalendarModule;
+  chromeReleased = '2008-08';
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
-
+    
 
     ) {
   }

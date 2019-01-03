@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { RegisterpasswordPage } from '../registerpassword/registerpassword';
 import { HttpServicesProvider } from "../../providers/http-services/http-services";
 
@@ -25,7 +25,9 @@ export class RegistersignPage {
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               public httpservices:HttpServicesProvider,
-              public storage:StorageProvider) {
+              public storage:StorageProvider,
+              public toastCtrl: ToastController,
+              ) {
 
                 this.tel=this.storage.get('reg_tel');
   }
@@ -83,7 +85,8 @@ export class RegistersignPage {
       var api='api/sendCode'
       this.httpservices.doPost(api,{"tel":this.tel,"code":this.tel},(result)=>{
         console.log(result)/* 测试 */
-        
+        console.log(result.code)
+        this.presentToast(result);
         if(result.success){  /* 判断如果成功就跳转到下个界面  验证验证码*/
            this.num=10; /* 设置倒计时 */
            this.doTimer(); /* 倒计时 */
@@ -96,4 +99,12 @@ export class RegistersignPage {
   }
   
 
+  /* 弹出验证码 */
+  presentToast(result) {
+    const toast = this.toastCtrl.create({
+      message: result.code,
+      duration: 3000
+    });
+    toast.present();
+  }
 }

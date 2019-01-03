@@ -1,3 +1,4 @@
+import { SettingsListPage } from './../settings-list/settings-list';
 import { HttpServicesProvider } from './../../providers/http-services/http-services';
 import { PersonalPage } from './../personal/personal';
 import { RegisterPage } from './../register/register';
@@ -22,6 +23,7 @@ export class SettingsPage {
   public LoginPage=LoginPage;
   public RegisterPage=RegisterPage;
   public PersonalPage=PersonalPage;
+  public SettingsListPage=SettingsListPage;
   // public isLogin=false;
   public userinfo='';
   constructor(public navCtrl: NavController,

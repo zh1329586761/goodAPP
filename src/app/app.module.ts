@@ -1,3 +1,6 @@
+import { SettingsListPage } from './../pages/settings-list/settings-list';
+import { PersonalPage } from './../pages/personal/personal';
+import { RegistersignPage } from './../pages/registersign/registersign';
 import { CalendarModule } from 'ionic3-calendar';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { StorageProvider } from './../providers/storage/storage';
@@ -41,7 +44,10 @@ import { ConfigProvider } from '../providers/config/config';
     RegisterPage,
     Register2Page,
     LoginPage,
+    PersonalPage,
+    RegistersignPage,
     RegisterpasswordPage,
+    SettingsListPage,
   ],
   imports: [
     BrowserModule,
@@ -64,7 +70,10 @@ import { ConfigProvider } from '../providers/config/config';
     RegisterPage,
     Register2Page,
     LoginPage,
+    RegistersignPage,
+    PersonalPage,
     RegisterpasswordPage,
+    SettingsListPage,
   ],
   providers: [
     StatusBar,
@@ -72,6 +81,7 @@ import { ConfigProvider } from '../providers/config/config';
     ConfigProvider,
     HttpServicesProvider,
     StorageProvider,
+    PersonalPage,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

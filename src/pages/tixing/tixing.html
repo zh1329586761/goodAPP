@@ -8,18 +8,19 @@
 
   <ion-navbar color="dark">
       <ion-buttons start>
-          <button ion-button large [navPush]="SettingsPage">
-            <ion-icon name="cog"></ion-icon>
+          <button ion-button [navPush]="SettingsPage">
+            <ion-icon name="cog" class="settingsIcon"></ion-icon>
           </button>
      </ion-buttons>
 
-    <ion-title>日历</ion-title>
+    <ion-title>
+        <ion-datetime displayFormat="YYYY-MM" min="1990-01" max="2034-12" [(ngModel)]="chromeReleased" cancelText="取消" doneText="确定"></ion-datetime>
+    </ion-title>
 
     <ion-buttons end>
-        <button ion-button clear (tap)="calendar.today()">
-         今天
-        </button>
+      <button ion-button (click)="calendar.today()">今天</button>
    </ion-buttons>
+
   </ion-navbar>
 
 </ion-header>
@@ -58,8 +59,8 @@
   </div>
   <div class="mid" *ngIf="isHidden">
           <!-- 日历插件 -->
-         <!-- <ion-calendar #calendar></ion-calendar> -->
-    
+
+         <ion-calendar #calendar></ion-calendar>
         <div class="upicon">
             <ion-icon name="ios-arrow-up-outline" text-center (tap)="hiddenfour()"></ion-icon>
         </div>

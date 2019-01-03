@@ -13,6 +13,18 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
+<div class="register-page">
+  <input type="text" placeholder="请输入手机号" [(ngModel)]="tel" maxlength="11">
+</div>
+<button ion-button class="next-btn" (tap)="goRegistersignPage()" >下一步</button>
+
+
+<!-- <button ion-button [navPush]="CeshiPage">测试注册模板页面</button> -->
+
+<!-- <ion-item>
+  <ion-label >前面</ion-label>
+  <ion-input type="text"  placeholder="测试一下咯" clearInput></ion-input>
+</ion-item> -->
 </ion-content>
