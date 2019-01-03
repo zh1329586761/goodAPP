@@ -1,0 +1,65 @@
+page-tixing {
+    .ml{
+        margin-left: 1rem;
+    }
+    .top{
+        // background-color: green;
+        // height: 4rem;
+        // line-height:  4rem;
+        width: 100%;
+        border-bottom: 1px solid #666;
+        .chip{
+            margin-left: .7rem;
+        }
+        
+        ion-chip ion-icon {
+            font-size: 20px !important;
+        }
+        .more{
+            margin-left: 7rem;
+        }
+    }
+
+    .mid{
+        // background-color: yellowgreen;
+        // height: 30rem;
+        width: 100%;
+        .upicon{
+            text-align: center;
+        }
+    }
+
+    .bottom{
+        // background-color: orange;
+        // height: 30rem;
+        width: 100%;
+
+        .bottom_content{
+            ion-icon{
+                font-size: 20rem;
+                text-align: center;
+                display: block;
+            }
+            p{
+                text-align: center;
+            }
+        }
+    }
+
+    .bottom_header{
+        // border-top: rgb(180, 179, 179) 1px solid;
+        // border-bottom: rgb(180, 179, 179) 1px solid;
+        box-shadow: 1px 1px 5px #888888;
+    }
+
+    .segment-button{
+        border-style:none !important;
+        color:rgb(189, 182, 182) !important;
+    }
+
+    .segment-activated{
+        color:#488aff !important;
+        background-color:transparent !important;
+        font-weight: bold  !important;
+    }
+}

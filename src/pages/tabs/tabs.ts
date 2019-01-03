@@ -1,17 +1,22 @@
+import { TixingPage } from './../tixing/tixing';
+import { LianxirenPage } from './../lianxiren/lianxiren';
+import { ShixiangPage } from './../shixiang/shixiang';
+import { DaifaPage } from './../daifa/daifa';
+import { MubanPage } from './../muban/muban';
 import { Component } from '@angular/core';
 
-import { AboutPage } from '../about/about';
-import { ContactPage } from '../contact/contact';
-import { HomePage } from '../home/home';
+
 
 @Component({
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
 
-  tab1Root = HomePage;
-  tab2Root = AboutPage;
-  tab3Root = ContactPage;
+  tab1Root = MubanPage;
+  tab2Root = DaifaPage;
+  tab3Root = ShixiangPage;
+  tab4Root = LianxirenPage;
+  tab5Root = TixingPage;
 
   constructor() {
 
