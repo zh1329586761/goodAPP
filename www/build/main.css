@@ -30527,50 +30527,120 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
-ion-calendar {
-  font-family: "Microsoft YaHei";
+page-appstart .login_pc {
+  width: 100%;
+  height: 100%;
+  background-image: url(../../assets/imgs/z1.jpg);
+  background-size: 100%;
+  background-position: center;
+  overflow: hidden;
 }
 
-ion-calendar .center {
+page-appstart .btn3 {
+  margin-top: 110%;
+  margin-left: 35%;
+  top: 200px;
+}
+
+page-appstart .login_btn {
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
   text-align: center;
+  border: 1px solid #666;
+  margin-top: 20px;
+  font-weight: bold;
 }
 
-ion-calendar .calendar-header-col {
-  font-size: 1rem;
-  color: #666;
-}
-
-ion-calendar .calendar-row .calendar-col {
+calendar .calendar-head {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 7.14286vw;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0.8rem;
-  font-size: 1.2rem;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  list-style: none;
 }
 
-ion-calendar .calendar-row .not-this-month {
-  color: #8f8989;
-  /* 当前页面不是本月的日期字体颜色 */
-  border-radius: 200%;
+calendar .calendar-head > li {
+  width: 14.28571vw;
+  text-align: center;
+  color: #c3c3c3;
 }
 
-ion-calendar .calendar-row .today {
-  color: black;
-  border: #5c7eda solid 1px;
-  border-radius: 200%;
+calendar-day .calendar-day {
+  width: 14.28571vw;
+  height: 14.28571vw;
+  background-size: 50% !important;
+  color: #c3c3c3;
+  font-size: 1.5rem;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 0px;
+  padding-right: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: all 0ms;
+  transition: all 0ms;
 }
 
-ion-calendar .calendar-row .select {
-  -webkit-box-shadow: none;
-  box-shadow: none;
+calendar-day .isToday {
+  color: #488aff;
+  font-weight: bold;
+}
+
+calendar-day .isCurrentMonth {
+  background: #fff;
+  color: #000;
+}
+
+calendar-day div.isSelectDay {
+  background-color: #488aff;
+  border-color: #488aff;
+  border-radius: 50%;
+}
+
+calendar-day div.isSelectDay > span {
   color: #fff;
-  background: radial-gradient(#5c7eda, #5e89ec, #5e89ec);
-  border-radius: 200%;
+}
+
+calendar-month .calendar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 page-login .login-btn1 {
@@ -31124,6 +31194,50 @@ page-personal .exit_btn {
   text-align: justify;
 }
 
+page-scan html, page-scan body, page-scan ion-app, page-scan ion-content, page-scan ion-page, page-scan .nav-decor {
+  background-color: transparent !important;
+}
+
+page-scan .zhong {
+  display: block;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  margin-left: -100px;
+  margin-top: -100px;
+  border: orange 1px solid;
+}
+
+page-scan .zhong .line {
+  position: absolute;
+  z-index: 9;
+  height: 2px;
+  width: 100%;
+  background-color: #090;
+  animation: scan 3s infinite alternate;
+  -webkit-animation: scan 3s infinite alternate;
+}
+
+@-webkit-keyframes scan {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100%;
+  }
+}
+
+@keyframes scan {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100%;
+  }
+}
+
 page-settings .login {
   padding: 10px 70px;
 }
@@ -31168,29 +31282,27 @@ page-tixing .settingsIcon {
 }
 
 page-tixing .top {
+  height: 38px;
+  line-height: 38px;
   width: 100%;
   -webkit-box-shadow: 1px 1px 5px #888888;
   box-shadow: 1px 1px 5px #888888;
-}
-
-page-tixing .top .chip {
-  margin-left: .7rem;
-}
-
-page-tixing .top ion-chip ion-icon {
-  font-size: 20px !important;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 page-tixing .top .more {
-  margin-left: 7rem;
-}
-
-page-tixing .mid {
-  width: 100%;
+  margin-left: auto;
+  margin-right: 1rem;
 }
 
 page-tixing .mid .upicon {
   text-align: center;
+  margin-bottom: 5px;
+  color: black;
+  font-size: 20px !important;
 }
 
 page-tixing .bottom {
@@ -31198,7 +31310,7 @@ page-tixing .bottom {
 }
 
 page-tixing .bottom .bottom_content ion-icon {
-  font-size: 20rem;
+  font-size: 10rem;
   text-align: center;
   display: block;
   color: #cfcac2;
@@ -31206,6 +31318,10 @@ page-tixing .bottom .bottom_content ion-icon {
 
 page-tixing .bottom .bottom_content p {
   text-align: center;
+}
+
+page-tixing .bottom .bottom_content ion-item {
+  top: 2px;
 }
 
 page-tixing .bottom_header {
@@ -31222,4 +31338,8 @@ page-tixing .segment-activated {
   color: #488aff !important;
   background-color: transparent !important;
   font-weight: bold  !important;
+}
+
+page-tixing .calendar {
+  margin: 0;
 }

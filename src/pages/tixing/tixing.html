@@ -1,9 +1,3 @@
-<!--
-  Generated template for the TixingPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header >
 
   <ion-navbar color="dark">
@@ -13,56 +7,54 @@
           </button>
      </ion-buttons>
 
-    <ion-title>
-        <ion-datetime displayFormat="YYYY-MM" min="1990-01" max="2034-12" [(ngModel)]="chromeReleased" cancelText="取消" doneText="确定"></ion-datetime>
+    <ion-title  (click)="selectDate()">
+        <!-- <ion-datetime displayFormat="YYYY-MM" min="1990-01" max="2034-12" [(ngModel)]="chromeReleased" cancelText="取消" doneText="确定"></ion-datetime> -->
+        {{date}}
+        <ion-icon name="calendar"></ion-icon>
     </ion-title>
 
     <ion-buttons end>
-      <button ion-button (click)="calendar.today()">今天</button>
+      <!-- <button ion-button (tap)="calendar.today()">今天</button> -->
+      <button ion-button (click)="today()">今天</button>
    </ion-buttons>
+    
 
   </ion-navbar>
-
+ 
 </ion-header>
 
 
-<ion-content>
+<ion-content >
   <div class="top">
-      <ion-chip  class="ml show" (tap)="showUnder()" ><!-- 显示隐藏下方事件 -->
-          <ion-icon name="ios-arrow-down" color="gray"></ion-icon>
+
+      <ion-chip  class="ml bluebtn" (tap)="showUnder()"  text-center>
+          <ion-icon name="ios-arrow-down" *ngIf="isshowUnder" ></ion-icon>
+          <ion-icon name="ios-arrow-up" *ngIf="!isshowUnder" ></ion-icon>
         </ion-chip>
 
-      <ion-chip color="danhuise" style="width:40px;text-align:center" class="chip">
+      <ion-chip color="danhuise" style="width:40px;text-align:center" class="chip ml">
           <ion-label>日</ion-label>
         </ion-chip>
-      <ion-chip color="danhuise" style="width:80px;text-align:center">
+      <ion-chip color="danhuise" style="width:80px;text-align:center" class="ml">
           <ion-label>行事历</ion-label>
         </ion-chip>
-      <ion-chip color="danhuise"  style="width:50px;text-align:center">
+      <ion-chip color="danhuise"  style="width:50px;text-align:center" class="ml">
           <ion-label>周</ion-label>
         </ion-chip>
 
-        <ion-chip color="primary" class="more" >
+        <ion-chip color="primary" class="more" (tap)="presentActionSheet()">
             <ion-icon name="md-more" color="primary"></ion-icon>
           </ion-chip>
 
-          <!-- <ion-fab  clsss="morebtn">
-              <button ion-fab color="primary"><ion-icon name="md-more"></ion-icon></button>
-              <ion-fab-list side="bottom">
-                <button ion-fab (click)="openSocial('addItems', fab4)"><ion-icon name="add"></ion-icon></button>
-                <button ion-fab (click)="openSocial('addAlert', fab4)"><ion-icon name="heart"></ion-icon></button>
-                <button ion-fab (click)="openSocial('addAlert', fab4)"><ion-icon name="share"></ion-icon></button>
-              </ion-fab-list>
-            </ion-fab> -->
-              
-
   </div>
-  <div class="mid" *ngIf="isHidden">
+  <div class="mid" *ngIf="isHidden">  <!-- *ngIf="isHidden" 启用隐藏的话 error-->
+    <calendar [(ngModel)]="date" (onChange)="changeDate($event)"></calendar>
           <!-- 日历插件 -->
-
-         <ion-calendar #calendar></ion-calendar>
-        <div class="upicon">
-            <ion-icon name="ios-arrow-up-outline" text-center (tap)="hiddenfour()"></ion-icon>
+         <!-- <ion-calendar #calendar ></ion-calendar> -->
+        <div class="upicon" (tap)="showTop()">
+            <!-- <ion-icon name="ios-arrow-up-outline" text-center (tap)="hiddenfour()"></ion-icon> -->
+            <ion-icon name="ios-arrow-down" *ngIf="!isshowUnder" ></ion-icon>
+            <ion-icon name="ios-arrow-up" *ngIf="isshowUnder" ></ion-icon>
         </div>
   </div>
   <div class="bottom">
@@ -91,32 +83,39 @@
     <div [ngSwitch]="tabs">
         <div class="bottom_content">
             <div *ngSwitchCase="'tx'">
-              <ion-icon name="filing" text-center></ion-icon>
-                <p>在当前时间没有设置过提醒</p>
-              </div>
+                <div class="tx_list" *ngIf="istxList" >
+                    <ion-item *ngFor="let l of list_title" >
+                      {{l.tx}}
+                    </ion-item>
+                </div>
+                <div class="tx null" *ngIf="!istxList" >
+                      <ion-icon name="filing" text-center></ion-icon>
+                      <p>在当前时间没有设置过提醒</p>
+                </div>
+           </div>
         </div>
         <div class="bottom_content">
             <div *ngSwitchCase="'cj'">
-              <ion-icon name="filing" text-center></ion-icon>
-                <p>在当前时间没有创建过事项</p>
+                    <ion-icon name="filing" text-center></ion-icon>
+                    <p>在当前时间没有创建过事项</p>
               </div>
         </div>
         <div class="bottom_content">
             <div *ngSwitchCase="'ks'">
-              <ion-icon name="filing" text-center></ion-icon>
-                <p>在当前时间没有事项开始过</p>
+                    <ion-icon name="filing" text-center></ion-icon>
+                    <p>在当前时间没有事项开始过</p>
               </div>
         </div>
         <div class="bottom_content">
             <div *ngSwitchCase="'js'">
-              <ion-icon name="filing" text-center></ion-icon>
-                <p>在当前时间没有事项结束过</p>
+                    <ion-icon name="filing" text-center></ion-icon>
+                    <p>在当前时间没有事项结束过</p>
               </div>
         </div>
         <div class="bottom_content">
             <div *ngSwitchCase="'gd'">
-              <ion-icon name="filing" text-center></ion-icon>
-                <p>在当前时间没有归档过事项</p>
+                    <ion-icon name="filing" text-center></ion-icon>
+                    <p>在当前时间没有归档过事项</p>
               </div>
         </div>
     </div>

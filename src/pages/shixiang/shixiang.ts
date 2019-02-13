@@ -14,8 +14,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'shixiang.html',
 })
 export class ShixiangPage {
-
+ 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+   
   }
 
   ionViewDidLoad() {

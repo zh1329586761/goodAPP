@@ -1,14 +1,14 @@
 webpackJsonp([10],{
 
-/***/ 416:
+/***/ 428:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LianxirenPageModule", function() { return LianxirenPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MubanPageModule", function() { return MubanPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lianxiren__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__muban__ = __webpack_require__(119);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var LianxirenPageModule = /** @class */ (function () {
-    function LianxirenPageModule() {
+var MubanPageModule = /** @class */ (function () {
+    function MubanPageModule() {
     }
-    LianxirenPageModule = __decorate([
+    MubanPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__lianxiren__["a" /* LianxirenPage */],
+                __WEBPACK_IMPORTED_MODULE_2__muban__["a" /* MubanPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__lianxiren__["a" /* LianxirenPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__muban__["a" /* MubanPage */]),
             ],
         })
-    ], LianxirenPageModule);
-    return LianxirenPageModule;
+    ], MubanPageModule);
+    return MubanPageModule;
 }());
 
-//# sourceMappingURL=lianxiren.module.js.map
+//# sourceMappingURL=muban.module.js.map
 
 /***/ })
 

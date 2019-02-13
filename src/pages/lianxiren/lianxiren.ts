@@ -1,3 +1,4 @@
+import { ScanPage } from './../scan/scan';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -22,4 +23,8 @@ export class LianxirenPage {
     console.log('ionViewDidLoad LianxirenPage');
   }
 
+  gotoscanQR(){
+    this.navCtrl.push(ScanPage,null,{"animate":false});
+    console.log("扫一扫")
+  }
 }
